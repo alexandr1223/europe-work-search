@@ -147,6 +147,8 @@ $grey: #BABABA
         height: 70px
         width: 70px
         svg
+            width: 50px
+            height: 50px
             position: absolute
             left: 48%
             top: 52%
@@ -214,6 +216,7 @@ $grey: #BABABA
         margin: auto
         font-size: 22px
         background: #000
+        border: 1px solid #000
         color: $yellow
         margin-bottom: 15px
         width: max-content
@@ -233,9 +236,11 @@ $grey: #BABABA
     &__title
         color: $yellow
         max-width: 670px
+        margin-bottom: 35px
     &__subtitle
         max-width: 680px
         color: #fff
+        margin-bottom: 25px
     &-form
         display: flex
         margin-top: 40px
@@ -261,3 +266,153 @@ $grey: #BABABA
             margin-bottom: 0
             display: block
             margin-top: auto
+
+// Як ми працюємо?
+
+.work
+    background: url('../img/bg/work.jpg') center center/cover no-repeat
+    height: 100%
+    padding: 80px 0px
+    &__title
+        color: #ffffff
+        margin-bottom: 60px
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 50px
+    &__item
+        display: flex
+        align-items: center
+        svg
+            width: 100px
+            height: 100px
+        span
+            font-size: 32px
+            color: #fff 
+            margin-left: 30px
+            text-align: left
+            width: 100%
+
+// Гарантії
+
+.warranty
+    background: url('../img/bg/garantee.jpg') center center/cover no-repeat
+    padding: 80px 0
+    &__title
+        color: #fff
+        margin-bottom: 45px
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 50px 165px
+        &--title
+            font-size: 34px
+            color: #ffffff
+            text-align: center
+            margin-bottom: 20px
+        &--subtitle
+            text-align: center
+            color: $grey
+            font-size: 24px
+            line-height: 140%
+    &__item
+        display: flex
+        flex-direction: column
+        svg
+            margin: 0 auto
+            width: 260px
+            margin-bottom: 20px
+    
+// Відгуки
+
+.review
+    padding: 80px 0
+    &__slider
+        position: relative
+        margin-top: 60px
+        img
+            margin: 0 40px
+            z-index: 1
+    .prev-arrow
+        position: absolute
+        top: 50%
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        background: #000
+        left: -50px
+        transform: translateY(-50%) rotate(90deg)
+        cursor: pointer
+        z-index: 10
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-47%, -40%)
+            path
+                fill: #fff
+    .next-arrow
+        position: absolute
+        top: 50%
+        width: 60px
+        height: 60px
+        border-radius: 50%
+        background: #000
+        right: -50px
+        transform: translateY(-50%) rotate(270deg)
+        cursor: pointer
+        z-index: 10
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-47%, -40%)
+            path
+                fill: #fff
+
+
+// Футер
+
+.footer
+    &__block
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-gap: 100px
+        margin-top: 50px
+    &__item
+        align-items: center
+        span
+            display: block
+            font-size: 24px 
+            color: #ffffff  
+            text-align: center
+            max-width: 250px
+            margin: 0 auto
+    &__num
+        display: flex
+        flex-direction: column
+        a
+            display: block
+            font-size: 24px 
+            color: #ffffff  
+            text-align: center
+            margin-bottom: 12px
+    &__logo
+        img
+            display: block
+            width: 270px
+            margin: 0 auto
+    &__social
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        grid-gap: 0 30px
+        margin: 0 auto
+        margin-top: 15px
+        li
+            svg
+                width: 50px
+                height: 50px
+
+.consult-form--footer
+    margin-bottom: 80px
+    

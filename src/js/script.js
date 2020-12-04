@@ -10,7 +10,13 @@ window.addEventListener('DOMContentLoaded', () => {
       }, 500);
     }
 
-
+    $('.review__slider').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
+      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>"
+    });
 
     $('img.img-svg').each(function(){
       var $img = $(this);
