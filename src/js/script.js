@@ -15,7 +15,15 @@ window.addEventListener('DOMContentLoaded', () => {
       slidesToShow: 3,
       slidesToScroll: 1,
       prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
-      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>"
+      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
     });
 
     $('img.img-svg').each(function(){
@@ -35,6 +43,19 @@ window.addEventListener('DOMContentLoaded', () => {
       }, 'xml');
     });
 })
+
+  function menu() {
+    const humburger = document.querySelector('.menu__humburger'),
+    menu = document.querySelector('.menu__mobile'),
+    close = document.querySelector('.menu__mobile--close');
+    humburger.addEventListener('click', () => {
+      menu.style.cssText = 'right: 0px'
+    })
+    close.addEventListener('click', () => {
+      menu.style.cssText = 'right: -100%'
+    })
+  }
+  menu();
 
 const anchors = document.querySelectorAll('a[href*="#"]')
 
