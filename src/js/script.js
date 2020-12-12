@@ -57,6 +57,30 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   menu();
 
+  function modalShow(button, modal, oldModal) {
+    document.querySelectorAll(button).forEach(item => {
+      item.addEventListener('click', () => {
+        if(oldModal) {
+          document.querySelector(oldModal).style.cssText = 'opacity: 0; z-index: -1;';
+        }
+        document.querySelector(modal).style.cssText = 'opacity: 1; z-index: 200;';
+      })
+    })
+  }
+  modalShow(".vacancies-buttons__info", ".modal--info");
+  modalShow(".vacancies-buttons__buy", ".modal--buy", '.modal--info');
+
+  function modalClose(button, modal) {
+    document.querySelectorAll(button).forEach(item => {
+      item.addEventListener('click', () => {
+        document.querySelectorAll(modal).forEach(mod => {
+          mod.style.cssText = 'opacity: 0; z-index: -1;';
+        })
+      })
+    })
+  }
+  modalClose('.modal-block__close', '.modal')
+
 const anchors = document.querySelectorAll('a[href*="#"]')
 
 for (let anchor of anchors) {
