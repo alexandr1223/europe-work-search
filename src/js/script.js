@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
-      prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
-      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
+      prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='src/img/icon/arrow.svg'></div>",
+      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='src/img/icon/arrow.svg'></div>",
       responsive: [
         {
           breakpoint: 768,
