@@ -49,10 +49,10 @@ get_header() ?>
                             <li><a href="tel:+333333333">+38 (098) 25-37-125</a></li>
                         </ul>
                         <ul class="menu__links">
-                            <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/viber.svg" alt="viber" class="img-svg"></a></li>
-                            <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/telegram.svg" alt="telegram" class="img-svg"></a></li>
-                            <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/instagram.svg" alt="instagram" class="img-svg"></a></li>
-                            <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/whtasup.svg" alt="whatsup" class="img-svg"></a></li>
+                            <li><a href="<?php the_field('link_viber'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/viber.svg" alt="viber" class="img-svg"></a></li>
+                            <li><a href="<?php the_field('link_telegram'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/telegram.svg" alt="telegram" class="img-svg"></a></li>
+                            <li><a href="<?php the_field('link_instagram'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/instagram.svg" alt="instagram" class="img-svg"></a></li>
+                            <li><a href="<?php the_field('link_whatsapp'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/whtasup.svg" alt="whatsup" class="img-svg"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -62,10 +62,10 @@ get_header() ?>
                     <h1 class="title header__title"><?php the_field('title header__title') ?></h1>
                     <h2 class="subtitle header__subtitle"><?php the_field('subtitle header__subtitle'); ?></h2>
                     <ul class="header__social">
-                        <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/viber.svg" alt="viber" class="img-svg"></a></li>
-                        <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/telegram.svg" alt="telegram" class="img-svg"></a></li>
-                        <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/instagram.svg" alt="instagram" class="img-svg"></a></li>
-                        <li><a href="#"><img src="<?php bloginfo('template_url');?>/src/img/icon/whtasup.svg" alt="whatsup" class="img-svg"></a></li>
+                        <li><a href="<?php the_field('link_viber'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/viber.svg" alt="viber" class="img-svg"></a></li>
+                        <li><a href="<?php the_field('link_telegram'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/telegram.svg" alt="telegram" class="img-svg"></a></li>
+                        <li><a href="<?php the_field('link_instagram'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/instagram.svg" alt="instagram" class="img-svg"></a></li>
+                        <li><a href="<?php the_field('link_whatsapp'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/icon/whtasup.svg" alt="whatsup" class="img-svg"></a></li>
                     </ul>
                 </div>
                 <form action="" class="first-form" method="POST">
@@ -95,14 +95,13 @@ get_header() ?>
                 Послуги
             </h2>
             <h3 class="subtitle services__subtitle">
-                Наша команда представляє наступні послуги
+                <?php the_field('subtitle services__subtitle'); ?>
             </h3>
             <div class="services__block">
                 <div class="services__item">
                     <div class="services__wrapper">
                         <div class="services__title">
-                            Робимо ВІЗУ для
-                            роботи в Європі
+                        <?php the_field('services__title_first'); ?>
                         </div>
                         <div class="services__number">
                             <img src="<?php bloginfo('template_url');?>/src/img/icon/one.svg" alt="" class="img-svg">
@@ -112,8 +111,7 @@ get_header() ?>
                 <div class="services__item">
                     <div class="services__wrapper">
                         <div class="services__title">
-                            Робимо ВІЗУ для
-                            роботи в Європі
+                        <?php the_field('services__title_second'); ?>
                         </div>
                         <div class="services__number">
                             <img src="<?php bloginfo('template_url');?>/src/img/icon/two.svg" alt="" class="img-svg">
@@ -123,8 +121,7 @@ get_header() ?>
                 <div class="services__item">
                     <div class="services__wrapper">
                         <div class="services__title">
-                            Робимо ВІЗУ для
-                            роботи в Європі
+                        <?php the_field('services__title_third'); ?>
                         </div>
                         <div class="services__number">
                             <img src="<?php bloginfo('template_url');?>/src/img/icon/three.svg" alt="" class="img-svg">
@@ -134,8 +131,7 @@ get_header() ?>
                 <div class="services__item">
                     <div class="services__wrapper">
                         <div class="services__title">
-                            Робимо ВІЗУ для
-                            роботи в Європі
+                        <?php the_field('services__title_four'); ?>
                         </div>
                         <div class="services__number">
                             <img src="<?php bloginfo('template_url');?>/src/img/icon/four.svg" alt="" class="img-svg">
@@ -154,27 +150,27 @@ get_header() ?>
             <div class="advant__block">
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/contract.svg" alt="contract" class="img-svg">
-                    <h3 class="advant__text">Офіційна робота за контрактом</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_first'); ?></h3>
                 </div>
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/visa.svg" alt="visa" class="img-svg">
-                    <h3 class="advant__text">100% гарантія отримання візи у зазначений період</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_second'); ?></h3>
                 </div>
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/prescription.svg" alt="" class="img-svg">
-                    <h3 class="advant__text">Повноцінне медичне страхування</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_third'); ?></h3>
                 </div>
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/bribe.svg" alt="bribe" class="img-svg">
-                    <h3 class="advant__text">Висока заробітна плата</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_four'); ?></h3>
                 </div>
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/week.svg" alt="week.svg" class="img-svg">
-                    <h3 class="advant__text">Виплата зарплати щотижня</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_fifth'); ?></h3>
                 </div>
                 <div class="advant__item">
                     <img src="<?php bloginfo('template_url');?>/src/img/icon/worldwide.svg" alt="worldwide" class="img-svg">
-                    <h3 class="advant__text">Після отриманої візи у Англію, легше подаватись на візи в США, Канаду, Австралію</h3>
+                    <h3 class="advant__text"><?php the_field('advant__text_sixth'); ?></h3>
                 </div>
             </div>
         </div>
@@ -278,13 +274,13 @@ get_header() ?>
                         Щодня ми ведемо пошук нових вакансій, перевіряємо якість та умови наданої роботи,  допомагаємо великій кількості людей знайти високооплачувану роботу в країнах Європи
                     </div>
                     <div class="new__social">
-                        <a href="#"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/viber-new.svg" alt=""></a>
-                        <a href="#"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/telegram-new.svg" alt=""></a>
-                        <a href="#"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/whatsup-new.svg" alt=""></a>
+                        <a href="<?php the_field('link_viber'); ?>"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/viber-new.svg" alt=""></a>
+                        <a href="<?php the_field('link_telegram'); ?>"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/telegram-new.svg" alt=""></a>
+                        <a href="<?php the_field('link_whatsapp'); ?>"><img class="img-svg" src="<?php bloginfo('template_url');?>/src/img/icon/whatsup-new.svg" alt=""></a>
                     </div>
                     <div class="new__social--bottom">
-                        <a href="#"><img src="<?php bloginfo('template_url');?>/src/img/workua.jpg" alt=""></a>
-                        <a href="#"><img src="<?php bloginfo('template_url');?>/src/img/olx.jpg" alt=""></a>
+                        <a href="<?php the_field('link_workua'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/workua.jpg" alt=""></a>
+                        <a href="<?php the_field('link_olx'); ?>"><img src="<?php bloginfo('template_url');?>/src/img/olx.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="new__item new__item--hide">
