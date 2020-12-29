@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', () => {
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
-      prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
-      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='../img/icon/arrow.svg'></div>",
+      prevArrow: "<div id='prev' class='next-arrow'><img class='img-svg' src='img/icon/arrow.svg'></div>",
+      nextArrow: "<div id='next' class='prev-arrow'><img class='img-svg' src='img/icon/arrow.svg'></div>",
       responsive: [
         {
           breakpoint: 768,
@@ -59,9 +59,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function modalShow(button, modal, oldModal) {
     document.querySelectorAll(button).forEach(item => {
-      item.addEventListener('click', () => {
+      item.addEventListener('click', function(event) {
         if(oldModal) {
+          if (document.querySelectorAll('.vacancies-block__title')) {
+            document.querySelector('.modal-content__title').textContent = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
+            document.querySelector(".modal-content__img--buy img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
+            console.log();
+            
+          }
           document.querySelector(oldModal).style.cssText = 'opacity: 0; z-index: -1;';
+        }
+        if (modal) {
+          console.log(document.querySelector('.modal-block__title'))
+          document.querySelector('.modal-block__title').textContent = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
+          document.querySelector(".modal-content__img img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
         }
         document.querySelector(modal).style.cssText = 'opacity: 1; z-index: 200;';
       })
@@ -97,3 +108,10 @@ for (let anchor of anchors) {
     })
   })
 }
+
+// $(document).on('click', 'div[class^="vacancies-buttons"]', function(e) {
+//   e.preventDefault();
+//   console.log(e.target);
+//   console.log(this);
+//   alert('Вы кликнули по ссылке с классом ' + this.className);
+// });

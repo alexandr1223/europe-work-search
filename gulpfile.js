@@ -18,7 +18,7 @@ gulp.task('sass', function(){
     .pipe(autoprefixer({
       browsers: ['last 8 versions']
     }))
-    .pipe(rename({suffix: '.min'}))
+    .pipe(rename({suffix: ''}))
     .pipe(gulp.dest('src/css'))
     .pipe(browserSync.reload({stream: true}))
 });

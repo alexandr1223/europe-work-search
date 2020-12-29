@@ -6,6 +6,8 @@ $grey: #BABABA
     width: 100%
     position: relative
     background: url('../img/bg/header-bg.png') center center/cover no-repeat
+    &--thanks
+        background: url('../img/bg/thanks-bg.jpg') center center/cover no-repeat
     &--other
         background: rgba(223, 223, 223, .1)
         height: 100%
@@ -24,19 +26,31 @@ $grey: #BABABA
         max-width: 670px
         margin-right: 20px
         margin-top: 100px
+        &--thanks
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -70%)
     &__title
         font-size: 78px 
         color: #ffffff
         margin-bottom: 35px
         text-align: left
+        &--thanks
+            text-align: center
     &__subtitle
         font-size: 38px
         color: #fff
         margin-bottom: 35px
         line-height: 140%
         text-align: left
+        &--thanks
+            text-align: center
     &__social
         display: flex
+        &--thanks
+            margin: 0 auto
+            width: max-content
         li
             &:not(:last-child)
                 margin-right: 25px
@@ -517,14 +531,21 @@ $grey: #BABABA
         border-radius: 6px
         cursor: pointer
         font-size: 15px
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 14px
+        transition: .4s
+        &:hover
+            transform: translateY(-3px)
     &__buy
         max-width: 145px
         border-radius: 6px
-        border: 1px solid #000
         padding: 11px 22px
         background: $yellow
         cursor: pointer
         font-size: 15px
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 14px
+        transition: .4s
+        &:hover
+            transform: translateY(-3px)
 
 
 // Модальные окна 
@@ -555,6 +576,11 @@ $grey: #BABABA
         top: 20px 
         right: 20px
         cursor: pointer
+        
+        svg
+            transition: .5s
+            &:hover
+                transform: rotate(180deg) 
 .modal-content
     display: grid
     grid-template-columns: 50% 50%
@@ -596,12 +622,18 @@ $grey: #BABABA
     &__input
         height: 50px
         font-size: 16px
-        border: 2px solid #000000
+        border: 1px solid rgba(0, 0, 0, .6)
         border-radius: 8px
         padding: 14px 20px
         margin-bottom: 16px
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 7px
     &__send
         margin: 0 auto
+        margin-top: 5px
         padding: 11px 50px
         max-width: 350px
         text-align: center
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 14px
+        transition: .4s
+        &:hover
+            transform: translateY(-3px)
