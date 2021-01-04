@@ -109,6 +109,25 @@ for (let anchor of anchors) {
   })
 }
 
+ 
+function scrollDownEvent(item) {
+	$(item).on("click","a", function (event) {
+    //отменяем стандартную обработку нажатия по ссылке
+    console.log(event.target)
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
+};
+scrollDownEvent('.menu__list');
+scrollDownEvent('.header');
 // $(document).on('click', 'div[class^="vacancies-buttons"]', function(e) {
 //   e.preventDefault();
 //   console.log(e.target);
