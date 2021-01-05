@@ -57,22 +57,52 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   menu();
 
+  function menuNum() {
+    document.body.addEventListener('click', (event) => {      
+        if (event.target == document.querySelectorAll('.menu__num li a')[0] ||
+        event.target == document.querySelectorAll('.menu__num li a')[1] ||
+        event.target == document.querySelectorAll('.menu__num li a')[2]
+        ) {
+          document.querySelectorAll('.menu__num li').forEach((item) => {
+            item.classList.add('menu__num--active')
+          })
+          document.querySelector('.menu__num--tr svg').style.cssText = 'transform: rotate(360deg)'
+        } else {
+          document.querySelectorAll('.menu__num li').forEach((item) => {
+            item.classList.remove('menu__num--active')
+          })
+          document.querySelector('.menu__num--tr svg').style.cssText = 'transform: rotate(180deg)'
+          document.querySelector('.menu__num--first').classList.add('menu__num--active')
+        }      
+    })
+  }
+  menuNum();
+
   function modalShow(button, modal, oldModal) {
     document.querySelectorAll(button).forEach(item => {
       item.addEventListener('click', function(event) {
+        
         if(oldModal) {
           if (document.querySelectorAll('.vacancies-block__title')) {
             document.querySelector('.modal-content__title').textContent = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
-            document.querySelector(".modal-content__img--buy img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
-            console.log();
-            
+            if (event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1] != undefined) {
+              document.querySelector(".modal-content__img--buy img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
+            }           
           }
           document.querySelector(oldModal).style.cssText = 'opacity: 0; z-index: -1;';
+          if (document.getElementsByName('title')) {
+            document.getElementsByName('title').value = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
+          }
         }
         if (modal) {
           console.log(document.querySelector('.modal-block__title'))
           document.querySelector('.modal-block__title').textContent = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
-          document.querySelector(".modal-content__img img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
+          if (event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1] != undefined) {
+            document.querySelector(".modal-content__img img").src = `${event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].getAttribute('src')}`;
+          }
+          if (document.getElementsByName('title')) {
+            document.getElementsByName('title').value = `${event.target.parentNode.parentNode.childNodes[1].textContent}`;
+          }
         }
         document.querySelector(modal).style.cssText = 'opacity: 1; z-index: 200;';
       })
@@ -113,7 +143,6 @@ for (let anchor of anchors) {
 function scrollDownEvent(item) {
 	$(item).on("click","a", function (event) {
     //отменяем стандартную обработку нажатия по ссылке
-    console.log(event.target)
 		event.preventDefault();
 
 		//забираем идентификатор бока с атрибута href
@@ -126,8 +155,23 @@ function scrollDownEvent(item) {
 		$('body,html').animate({scrollTop: top}, 1500);
 	});
 };
-scrollDownEvent('.menu__list');
-scrollDownEvent('.header');
+scrollDownEvent('.header .menu__list');
+
+$('.scroll-down').on("click", function (event) {
+  //отменяем стандартную обработку нажатия по ссылке
+  event.preventDefault();
+
+  //забираем идентификатор бока с атрибута href
+  var id  = $(this).attr('href'),
+
+  //узнаем высоту от начала страницы до блока на который ссылается якорь
+    top = $(id).offset().top;
+  
+  //анимируем переход на расстояние - top за 1500 мс
+  $('body,html').animate({scrollTop: top}, 1500);
+});
+
+
 // $(document).on('click', 'div[class^="vacancies-buttons"]', function(e) {
 //   e.preventDefault();
 //   console.log(e.target);
